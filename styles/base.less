@@ -1,56 +1,112 @@
 // Copyright (c) 2013 Bram de Haan http://atelierbramdehaan.nl
 @import "syntax-variables";
 
-.editor {
+atom-text-editor, :host {
   background-color: @syntax-background-color;
   color: @syntax-text-color;
-}
 
-.editor .gutter {
-  background-color: @syntax-gutter-background-color;
-  color: @syntax-gutter-text-color;
-}
+  .gutter {
+    background-color: @syntax-gutter-background-color;
+    color: @syntax-gutter-text-color;
+  }
 
-.editor .gutter .line-number.cursor-line {
-  background-color: @syntax-gutter-background-color-selected;
-  color: @syntax-gutter-text-color-selected;
-}
+  .gutter .line-number.cursor-line {
+    background-color: @syntax-gutter-background-color-selected;
+    color: @syntax-gutter-text-color-selected;
+  }
 
-.editor .gutter .line-number.cursor-line-no-selection {
-  color: @syntax-gutter-text-color-selected;
-}
+  .gutter .line-number.cursor-line-no-selection {
+    color: @syntax-gutter-text-color-selected;
+  }
 
-.editor .wrap-guide {
-  color: @syntax-wrap-guide-color;
-}
+  .wrap-guide {
+    color: @syntax-wrap-guide-color;
+  }
 
-.editor .indent-guide {
-  color: @syntax-indent-guide-color;
-}
+  .indent-guide {
+    color: @syntax-indent-guide-color;
+  }
 
-.editor .invisible-character {
-  color: @syntax-invisible-character-color;
-}
+  .invisible-character {
+    color: @syntax-invisible-character-color;
+  }
 
-.editor .search-results .marker .region {
-  background-color: transparent;
-  border: @syntax-result-marker-color;
-}
+  .search-results .marker .region {
+    background-color: transparent;
+    border: @syntax-result-marker-color;
+  }
 
-.editor .search-results .marker.current-result .region {
-  border: @syntax-result-marker-color-selected;
-}
+  .search-results .marker.current-result .region {
+    border: @syntax-result-marker-color-selected;
+  }
 
-.editor.is-focused .cursor {
-  border-color: @syntax-cursor-color;
-}
+  .is-focused .cursor {
+    border-color: @syntax-cursor-color;
+  }
 
-.editor.is-focused .selection .region {
-  background-color: @syntax-selection-color;
-}
+  .is-focused .selection .region {
+    background-color: @syntax-selection-color;
+  }
 
-.editor.is-focused .line-number.cursor-line-no-selection, .editor.is-focused .line.cursor-line {
-  background-color: #292824;
+  .is-focused .line-number.cursor-line-no-selection
+  .line.cursor-line {
+    background-color: #292824;
+  }
+
+  // Styling for Markdown
+
+  .source.gfm {
+    color: #a6a28c;
+  }
+
+  .gfm {
+    .markup.heading {
+      color: #cfb017;
+    }
+
+    .link {
+      color: #6e6b5e;
+    }
+
+    .variable.list,
+    .support.quote {
+      color: #b65611;
+    }
+
+    .link .entity {
+      color: #6684e1;
+    }
+
+    .raw {
+      color: #7d7a68;
+    }
+  }
+
+  .markdown {
+    .paragraph {
+      color: #a6a28c;
+    }
+
+    .heading {
+      color: #cfb017;
+    }
+
+    .raw {
+      color: #7d7a68;
+    }
+
+    .link {
+      color: #6684e1;
+
+      .string {
+        color: #6684e1;
+
+        &.title {
+          color: #a6a28c;
+        }
+      }
+    }
+  }
 }
 
 .variable.parameter.function {
@@ -117,10 +173,6 @@
   color: #b65611;
 }
 
-.none {
-  color: #b65611;
-}
-
 .constant {
   color: #b65611;
 }
@@ -139,10 +191,6 @@
 
 .meta.selector {
   color: #b854d4;
-}
-
-.none {
-  color: #b65611;
 }
 
 .markup.heading .punctuation.definition.heading, .entity.name.section {
